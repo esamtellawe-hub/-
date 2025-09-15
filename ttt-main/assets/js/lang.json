@@ -1,0 +1,21 @@
+{
+    "en": {
+      "home": "Home",
+      "swap": "Swap",
+      "contact": "Contact",
+      "about": "About",
+      "team": "Team",
+      "welcome": "Welcome to Jame",
+      "aboutUs": "About Us"
+    },
+    "ar": {
+      "home": "الرئيسية",
+      "swap": "تبديل",
+      "contact": "تواصل",
+      "about": "عنّا",
+      "team": "الفريق",
+      "welcome": "مرحبًا بك في جيم",
+      "aboutUs": "معلومات عنا"
+    }
+  }
+  

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Profile - Jana badilne</title>
+
+  <!-- Fonts & Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Raleway:wght@600;700&display=swap" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+  <!-- Main CSS -->
+  <link href="assets/css/main.css" rel="stylesheet">
+
+  <style>
+    body {
+      background: #f9fafc;
+    }
+
+    /* Profile Card */
+    .profile-card {
+      background: linear-gradient(145deg, #fdfbfb, #ebedee);
+      border-radius: 16px;
+      padding: 30px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+      text-align: center;
+      transition: 0.3s;
+    }
+    .profile-card:hover {
+      transform: translateY(-6px);
+    }
+    .profile-card img {
+      border: 6px solid #fff;
+      box-shadow: 0 0 12px rgba(0,0,0,0.1);
+    }
+
+    /* Info list */
+    .profile-info li {
+      padding: 6px 0;
+      font-size: 15px;
+    }
+    .profile-info i { margin-right: 8px; color: #6f42c1; }
+
+    /* Section Cards */
+    .card {
+      border-radius: 14px;
+      border: none;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+    }
+    .card h4 {
+      color: #6f42c1;
+      font-weight: bold;
+    }
+
+    /* Items */
+    .item-card {
+      background: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      padding: 15px;
+      text-align: center;
+      transition: 0.3s;
+    }
+    .item-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+    }
+    .item-card img {
+      max-height: 140px;
+      object-fit: contain;
+      margin-bottom: 10px;
+      border-radius: 8px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header Placeholder -->
+  <div id="header-placeholder"></div>
+
+  <!-- Profile Section -->
+  <section class="container py-5">
+    <div class="row g-4">
+
+      <!-- Left: Profile -->
+      <div class="col-lg-4">
+        <div class="profile-card">
+          <img src="assets/img/profile.jpeg" class="rounded-circle mb-3" alt="Profile" width="160">
+          <h3 class="mb-0">hala ali </h3>
+          <p class="text-muted small">Member since Aug 2025</p>
+          <div class="d-flex justify-content-center gap-2 mb-3">
+            <a href="#" class="btn btn-primary btn-sm"><i class="bi bi-envelope"></i> Message</a>
+            <a href="#" class="btn btn-outline-primary btn-sm"><i class="bi bi-person-plus"></i> Follow</a>
+          </div>
+          <ul class="list-unstyled text-start profile-info">
+            <li><i class="bi bi-envelope-fill"></i> halaali@gmail.com</li>
+            <li><i class="bi bi-telephone-fill"></i> +962 782 123 123</li>
+            <li><i class="bi bi-geo-alt-fill"></i> Amman, Jordan</li>
+            <li><i class="bi bi-star-fill text-warning"></i> Rating: 4.5/5</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Right: Items -->
+      <div class="col-lg-8">
+
+        <!-- Swap Items -->
+        <div class="card p-4 mb-4 bg-light">
+          <h4 class="mb-3"><i class="bi bi-arrow-left-right text-primary"></i> Swap Items</h4>
+          <div class="row g-3" id="swap-items"></div>
+        </div>
+
+        <!-- My Listings -->
+        <div class="card p-4 bg-white">
+          <h4 class="mb-3"><i class="bi bi-box-seam text-success"></i> My Listings</h4>
+          <div class="row g-3" id="listings-items"></div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer Placeholder -->
+  <div id="footer-placeholder"></div>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center">
+    <i class="bi bi-arrow-up-short"></i>
+  </a>
+
+  <!-- Vendor JS -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Shared JS -->
+  <script src="assets/js/ForAll.js"></script>
+  <script src="assets/js/cart.js"></script>
+
+  <!-- Items JS -->
+  <script>
+    const swapItems = [
+      { name: "Headphones", image: "https://via.placeholder.com/200x150.png?text=Item+1", status: "Available" },
+      { name: "Smart Watch", image: "https://via.placeholder.com/200x150.png?text=Item+2", status: "Pending" },
+      { name: "Sneakers", image: "https://via.placeholder.com/200x150.png?text=Item+3", status: "Available" }
+    ];
+
+    const listingsItems = [
+      { name: "Vintage Camera", image: "https://via.placeholder.com/200x150.png?text=Offer+1", price: "$120" },
+      { name: "Gaming Mouse", image: "https://via.placeholder.com/200x150.png?text=Offer+2", price: "$40" },
+      { name: "Bluetooth Speaker", image: "https://via.placeholder.com/200x150.png?text=Offer+3", price: "$60" },
+      { name: "Graphic Tablet", image: "https://via.placeholder.com/200x150.png?text=Offer+4", price: "$90" }
+    ];
+
+    function loadItems(items, containerId, type) {
+      const container = document.getElementById(containerId);
+      items.forEach(item => {
+        const div = document.createElement("div");
+        div.className = "col-6 col-md-4";
+        div.innerHTML = `
+          <div class="item-card">
+            <img src="${item.image}" class="img-fluid" alt="${item.name}">
+            <h6>${item.name}</h6>
+            ${type === 'swap' 
+              ? `<span class="badge ${item.status === 'Available' ? 'bg-success' : 'bg-warning text-dark'}">${item.status}</span>` 
+              : `<p class="fw-bold text-primary">${item.price}</p>`}
+          </div>
+        `;
+        container.appendChild(div);
+      });
+    }
+
+    loadItems(swapItems, "swap-items", "swap");
+    loadItems(listingsItems, "listings-items", "listing");
+  </script>
+
+</body>
+</html>

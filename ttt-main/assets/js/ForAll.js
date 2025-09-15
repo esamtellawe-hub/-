@@ -1,7 +1,7 @@
 // ForAll.js
 
-document.addEventListener('DOMContentLoaded', function () {
-    const headerHTML = `
+document.addEventListener("DOMContentLoaded", function () {
+  const headerHTML = `
       <header id="header" class="header sticky-top">
         <div class="topbar container-fluid d-flex justify-content-between align-items-center">
           <div class="lang-switch">
@@ -49,8 +49,8 @@ document.addEventListener('DOMContentLoaded', function () {
         </div>
       </header>
     `;
-  
-    const footerHTML = `
+
+  const footerHTML = `
       <footer id="footer" class="footer dark-background">
         <div class="container footer-top">
           <div class="row gy-4">
@@ -59,8 +59,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 <span class="sitename">BADILNE</span>
               </a>
               <div class="footer-contact pt-3">
-                <p class="mt-3"><strong>Phone:</strong> <span>+962 788 360 267</span></p>
-                <p><strong>Email:</strong> <span>janaibrahim39@gmail.com</span></p>
+                <p class="mt-3"><strong>Phone:</strong>  <a href="tel:+962788360267"><span>+962 788 360 267</span></a></p>
+                <p><strong>Email:</strong> <a href="mailto:janaibrahim39@gmail.com"><span>janaibrahim39@gmail.com</span></a></p>
               </div>
               <div class="social-links d-flex mt-4">
                 <a href="https://www.instagram.com/jana_ibrahim02/"><i class="bi bi-instagram"></i></a>
@@ -84,21 +84,22 @@ document.addEventListener('DOMContentLoaded', function () {
         </div>
       </footer>
     `;
-  
-    // إدراج الهيدر والفوتر
-    const headerPlaceholder = document.getElementById('header-placeholder');
-    const footerPlaceholder = document.getElementById('footer-placeholder');
-    if (headerPlaceholder) headerPlaceholder.innerHTML = headerHTML;
-    if (footerPlaceholder) footerPlaceholder.innerHTML = footerHTML;
-  
-    // تحديد الصفحة الحالية وإضافة active
-    const currentPage = window.location.pathname.split("/").pop() || "index.html";
-    document.querySelectorAll('#navmenu a').forEach(link => {
-      if (link.getAttribute('href') === currentPage) {
-        link.classList.add('active');
-      } else {
-        link.classList.remove('active');
-      }
-    });
+
+  // إدراج الهيدر والفوتر
+  const headerPlaceholder = document.getElementById("header-placeholder");
+  const footerPlaceholder = document.getElementById("footer-placeholder");
+  if (headerPlaceholder) headerPlaceholder.innerHTML = headerHTML;
+  if (footerPlaceholder) footerPlaceholder.innerHTML = footerHTML;
+
+  // تحديد الصفحة الحالية وإضافة active
+  const currentPage = window.location.pathname.split("/").pop() || "index.html";
+  document.querySelectorAll("#navmenu a").forEach((link) => {
+    if (link.getAttribute("href") === currentPage) {
+      link.classList.add("active");
+    } else {
+      link.classList.remove("active");
+    }
   });
+});
+
   
